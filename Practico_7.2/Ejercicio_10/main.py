@@ -14,10 +14,9 @@ def butlast(n: int = 0, l: list = None) -> list:
 
     if n <= 0:
         printc("No se realizaron cambios en la lista, ingrese un valor distinto\n","red")
-        msg_continuar()
         return l
 
-    return list(filter(lambda i: i < len(l) - (n) , l))
+    return list(filter(lambda i: i < len(l) - (n-1) , l[:-n]))
 
 def main():
     # Ejemplo de uso:
@@ -27,7 +26,7 @@ def main():
 
     try:
         
-        n = int(input(f'Ingrese un numero entre 1 y {len(lista)} para eliminar los ultimos items de la lista:'))
+        n = int(input(f'Ingrese un numero entre 1 y {len(lista)} para eliminar los ultimos items de la lista: '))
     except ValueError:
         msg_error()
         msg_continuar()
