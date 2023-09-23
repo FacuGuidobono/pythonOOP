@@ -19,7 +19,7 @@ def remove_if(p: callable , l: list = None) -> list:
 
 def main():
 
-  #----------------------------------------------------------------
+#----------------------------------------------------------------
   print_box("Se eliminaran todos los elementos de la lista que son pares [x % 2 == 0]","red")
   p = lambda x: x % 2 == 0 # elimina todos los elementos de la lista que son pares
   old_lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -38,6 +38,8 @@ def main():
   msg_continuar()
 
 if __name__ == "__main__":
+   
    clear_console()
+   print_box('''     Lista que contiene los elementos de l excepto aquellos elementos para los cuales el predicado p es verdadero.     ''', 'magenta')
    main()
    clear_console()
