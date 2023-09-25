@@ -63,6 +63,46 @@ def funciones(id: int , funct: callable) -> bool:
                 return True
             except ValueError:
                 msg_error()
+        elif id == 7: 
+            print_box("Comprobar si un punto esta dentro de una circunferencia:",'green')
+            try:
+                x = float(input('Ingrese el punto x: '))
+                y = float(input('Ingrese el punto y: '))
+                r = float(input('Ingrese el radio: '))
+                printc(f'\nResultado: {funct(0,0,x,y,r)}','yellow') # centro circunferencia en 0,0 por defecto 
+                msg_continuar()
+                return True
+            except ValueError:
+                msg_error()
+
+        elif id == 8:
+            print_box("Calcular el area de un triangulo:",'green')
+            try:
+                b = float(input('Ingrese la base (cm): '))
+                h = float(input('Ingrese la altura (cm): '))
+                printc(f'\nResultado: {funct(b,h)} cm2','yellow')
+                msg_continuar()
+                return True
+            except ValueError:
+                msg_error()
+        elif id == 9:
+            print_box("Calcular el area de un cuadrado:",'green')
+            try:
+                lado = float(input('Ingrese el lado (cm): '))
+                printc(f'\nResultado: {funct(lado)} cm2','yellow')
+                msg_continuar()
+                return True
+            except ValueError:
+                msg_error()
+        elif id == 10:
+            print_box('Ordenar una lista de numeros:','green')
+            try:
+                lista = list(map(float,input('Ingrese una lista de numeros separados por comas: ').split(',')))
+                printc(f'\nResultado: {funct(lista)}','yellow')
+                msg_continuar()
+                return True
+            except ValueError:
+                msg_error()
             
         elif id == 0:
             msg_salir()
