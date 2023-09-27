@@ -140,3 +140,37 @@ def menu_principal(op: list, title: str = "MENU PRINCIPAL") -> int:
         clear_console()
         menu_principal(op)
         
+###############################################################################################
+#                                                                                             #
+#                          -----------   VALIDACIONES  ------------                           #
+#                                                                                             #
+###############################################################################################   
+      
+        
+def validacion_un_numero(text:str, tipo: callable) -> int:
+    try:
+        if tipo == int:
+            return int(input(text))
+        elif tipo == float:
+            return float(input(text))
+        elif tipo == str:
+            return str(input(text))
+        else:
+            ValueError
+    except ValueError:
+        msg_error()
+        return validacion_un_numero(text,tipo)
+#------------------------------------------------------------------------------ 
+def validacion_dos_numeros(text1: str, text2: str, tipo: str = 'int') -> int:
+    try:
+        if tipo == 'int':
+            return int(input(text1)), int(input(text2))
+        elif tipo == 'float':
+            return float(input(text1)), float(input(text2))
+        elif tipo == 'str':
+            return str(input(text1)), str(input(text2))
+        else:
+            ValueError
+    except ValueError:
+        msg_error()
+        return validacion_dos_numeros(text1, text2, tipo)
