@@ -12,14 +12,14 @@
 
 
 from modulos.decorators import *
-
+#------------------------------------------------------------------
 def generador_multiplos(num):
     n = 1
     while True:
         yield n * num
         n += 1
         
-        
+#------------------------------------------------------------------       
 def main():
     clear_console()
     print_box('         GENERADOR DE MULTIPLOS        ','magenta')
@@ -29,19 +29,16 @@ def main():
     generador = generador_multiplos(num)
     lista = []
     
-    for divisor in generador:
-       
-        printc('-'*100,'green',style='bold')
-        printc(f'Multiplo/s: {divisor}','yellow')
-        printc('-'*100,'green',style='bold')
-        print('\n')
+   
+    for _ in range(cantidad):
+        multiplo = next(generador)
+        lista.append(multiplo)
+    printc('-'*100,'green',style='bold')
+    printc(f'Multiplo/s: {lista}','yellow')
+    printc('-'*100,'green',style='bold')
+    print('\n')
             
-        
-        
-        
-                
-
-
+#------------------------------------------------------------------        
 
 if __name__ == '__main__':
     main()  
