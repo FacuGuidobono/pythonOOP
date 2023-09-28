@@ -22,12 +22,25 @@ def generador_palindromos():
         
 def main():
     print_box('         GENERADOR DE PALINDROMOS NUMERICOS         ','magenta')
-    # Ejemplo de uso del generador para obtener los primeros 10 palíndromos
+    
+    cantidad_de_palindromos = 200
+    
     generador = generador_palindromos()
-    for _ in range(10):
-        palindromo = next(generador)
-        print(palindromo)
-        
+    lista = []
+    for _ in range(cantidad_de_palindromos):
+        if _ >= 9:
+            palindromo = next(generador)
+            lista.append(palindromo)
+            
+            if _ % 9 == 0:
+                printc('-'*100,'green')
+                palindromo = next(generador)
+                printc(f'Palindromos: {lista}','yellow')
+                printc('-'*100,'green')
+                print('\n')
+                lista = []
+                
+
 
 
 if __name__ == '__main__':
