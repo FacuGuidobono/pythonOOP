@@ -25,9 +25,9 @@ def generador_divisores(num):
         
 def main():
     clear_console()
-    print_box('         GENERADOR DE DIVISORES        ','magenta')
+    print_box('GENERADOR DE DIVISORES'.center(120),'magenta')
     
-    num = validacion_un_numero('Ingrese un numero para obtener sus divisores: ', int)
+    num = validar_un_input('Ingrese un numero para obtener sus divisores: ', int)
     
     generador = generador_divisores(num)
     
@@ -39,14 +39,14 @@ def main():
         if divisor == num:
             break
 
-    printc('-'*100,'green',style='bold')
+    printc('-'*124,'green',style='bold')
     printc(f'Divisor/es: {lista}','yellow')
-    printc('-'*100,'green',style='bold')
+    printc('-'*124,'green',style='bold')
     print('\n')
                 
         
         
-        
+
                 
 
 
